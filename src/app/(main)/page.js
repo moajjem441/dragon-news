@@ -6,9 +6,7 @@ import { Children } from "react";
 export default function Home({Children}) {
   return (
     <>
-     <h1>HomePage</h1>
-     <Header></Header>
-     <Navbar></Navbar>
+    <h1>Home Page</h1>
      {Children}
     </>
   );
