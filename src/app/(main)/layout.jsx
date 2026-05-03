@@ -4,16 +4,17 @@ import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
 import React, { Children } from 'react';
 
-const MainLayout = ({Children}) => {
+const MainLayout = ({children}) => {
     return (
         <>
 
         <Header></Header>
         <BreakingNews></BreakingNews>
        <Navbar></Navbar>
-        <h1>Home Page</h1>
+       
+        
         <main>
-            {Children}
+            {children}
         </main>
         </>
     );

@@ -1,3 +1,4 @@
+'use client'
 import { hr } from 'date-fns/locale';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +9,9 @@ const NavLink = ({href,children}) => {
 
     const isActive=href===pathName
     return (
-        <Link href={href} className={`${isActive ? "border-b-blue-600" : " "}`}></Link>
+        <Link href={href} className={`${isActive ? "border-b-2 border-b-blue-600" : " "}`}>
+            {children}
+        </Link>
     );
 };
 
