@@ -20,6 +20,7 @@ const RightSideBar = () => {
                     <div> <FaGithub /></div>
                     <div>Login With Github</div>
                    </div>
+                   
                 </button>
 
         </div>
