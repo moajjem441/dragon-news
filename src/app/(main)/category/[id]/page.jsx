@@ -1,3 +1,4 @@
+import CardNews from "@/components/Homepage/CardNews";
 import LeftSideBar from "@/components/Homepage/LeftSideBar";
 import RightSideBar from "@/components/Homepage/RightSideBar";
 import { getData, getNewsByCategoryId } from "@/lib/data";
@@ -25,12 +26,12 @@ const NewsDetails = async ({ params }) => {
         {
           news?.length > 0 ? (
             news.map((n) => (
-              <div
-                className="bg-gray-300 text-black p-3 mb-2"
+              <CardNews 
+               news={n}
                 key={n._id} // Oboshshoi news-er unique ID din
               >
                 {n.title}
-              </div>
+              </CardNews>
             ))
           ) : (
             <div className="text-gray-500 p-5 text-center font-bold">
