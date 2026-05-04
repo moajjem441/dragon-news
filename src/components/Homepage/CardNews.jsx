@@ -46,7 +46,7 @@ const CardNews = ({ news }) => {
                     height={200}
                 ></Image>
             </figure>
-            <p className='my-2 p-2'>{news.details}</p>
+            <p className='my-2 p-2 line-clamp-3'>{news.details}</p>
 
             {/* footer fo card  */}
 
@@ -58,7 +58,7 @@ const CardNews = ({ news }) => {
                     </div>
                     <div className='flex gap-2 justify-between items-center'>
                         <div><FaRegEye /></div>
-                        <p>{news.total_view}</p>
+                        <p >{news.total_view}</p>
                     </div>
                 </div>
 
