@@ -4,6 +4,7 @@ import React from 'react';
 import user from'@/assets/user.png'
 import NavLink from './NavLink';
 
+
 const Navbar = () => {
     return (
         <div className='flex justify-between container mx-auto  py-2'>
