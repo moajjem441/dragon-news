@@ -9,8 +9,7 @@ const LeftSideBar = ({allCategories,activeId}) => {
          <ul>
            {
             allCategories.news_category.map(category=><li className={`${activeId == category.category_id ? "bg-amber-800" : "bg-gray-500" } mb-2 text-center p-2`} 
-                key={category.category_id}
-            >
+                key={category.category_id}>
                 
                 <Link href={`/category/${category.category_id}`}>{category.category_name}</Link></li>)
           }
