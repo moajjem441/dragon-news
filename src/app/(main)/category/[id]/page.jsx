@@ -2,9 +2,6 @@ import LeftSideBar from "@/components/Homepage/LeftSideBar";
 import RightSideBar from "@/components/Homepage/RightSideBar";
 import { getData, getNewsByCategoryId } from "@/lib/data";
 
-
-
-
 const NewsDetails = async ({ params }) => {
   const { id } = await params;
 
