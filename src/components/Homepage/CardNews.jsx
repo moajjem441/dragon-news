@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import Image from 'next/image';
 import React from 'react';
 import { CiBookmark, CiShare2 } from 'react-icons/ci';
@@ -7,8 +8,18 @@ const CardNews = ({ news }) => {
     return (
             <div class="card bg-base-100  shadow-sm">
        {/* author info */}
-                  <div className='bg-gray-200'>
-                    <div><Image></Image></div>
+                  <div className='bg-gray-300'>
+                    <div><Image 
+                    src={news.author?.img}
+                    alt={news.author?.name}
+                    width={30}
+                    height={30}>
+                        </Image>
+                        <div>
+                            <h2 className='text-black'>{news.author.name}</h2>
+                            <p className='text-black'>{format(new Date(),"yyyy-MM-dd")}</p>
+                        </div>
+                        </div>
                     <div>
                         <CiBookmark />
                         <CiShare2 />
