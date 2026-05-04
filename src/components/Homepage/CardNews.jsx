@@ -6,39 +6,49 @@ import { CiBookmark, CiShare2 } from 'react-icons/ci';
 const CardNews = ({ news }) => {
     console.log(news)
     return (
-            <div class="card bg-base-100  shadow-sm">
-       {/* author info */}
-                  <div className='bg-gray-300'>
-                    <div><Image 
-                    src={news.author?.img}
-                    alt={news.author?.name}
-                    width={30}
-                    height={30}>
-                        </Image>
-                        <div>
-                            <h2 className='text-black'>{news.author.name}</h2>
-                            <p className='text-black'>{format(new Date(),"yyyy-MM-dd")}</p>
-                        </div>
-                        </div>
+        <div class="card bg-base-100  shadow-sm py-2">
+            {/* author info */}
+            <div className='bg-gray-500 flex justify-between items-center p-2'>
+                <div className='flex gap-4 items-center'>
                     <div>
-                        <CiBookmark />
-                        <CiShare2 />
+                        <Image className=' rounded-full'
+                            src={news.author?.img}
+                            alt={news.author?.name || "author_image"}
+                            width={30}
+                            height={30}>
+                        </Image>
                     </div>
-                  </div>
-            {/* card body  */}
-                <div class="card-body">
-                    <h2 class="card-title"> {news.title}</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                </div>
-                <figure>
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                </figure>
 
-                {/* footer fo card  */}
+
+                    <div>
+                        <h2 className='text-black '>{news.author.name}</h2>
+                        <p className='text-gray-300 '>{format(new Date(), "yyyy-MM-dd")}</p>
+                    </div>
+                </div>
+                <div className='flex text-2xl gap-2 text-gray-300'>
+                    <CiBookmark />
+                    <CiShare2 />
+                </div>
             </div>
-       
+
+
+            {/* card body  */}
+            <div class="card-body">
+                <h2 class="card-title"> {news.title}</h2>
+            </div>
+            <figure>
+                <Image
+                 src={news?.image_url}
+                 alt={news.author?.name || "news_image"}
+                 width={200}
+                 height={200}
+                ></Image>
+            </figure>
+            <p className='my-2 p-2'>{news.details}</p>
+
+            {/* footer fo card  */}
+        </div>
+
     );
 };
 
