@@ -7,6 +7,7 @@ const NewsDetails = async ({ params }) => {
 
   const allCategories = await getData();
   const news = await getNewsByCategoryId(id);
+  
 
   return (
     <div className="grid grid-cols-12 gap-2 mx-auto container  py-4">
