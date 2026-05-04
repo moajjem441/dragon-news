@@ -11,8 +11,7 @@ const MainLayout = ({children}) => {
         <Header></Header>
         <BreakingNews></BreakingNews>
        <Navbar></Navbar>
-       
-        
+          
         <main>
             {children}
         </main>
