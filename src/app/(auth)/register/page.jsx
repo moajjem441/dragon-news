@@ -24,9 +24,29 @@ const RegisterPage = () => {
 
             <div className="card w-96 bg-base-100 card-md shadow-sm">
                 <div className="card-body">
-                      <h1> Register</h1>
+                      <h1 className='text-2xl font-bold'> Register</h1>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
+
+
+                        
+                         <fieldset className="fieldset">
+                <legend className="fieldset-legend">Write your name</legend>
+                <input type="text" className="input"  placeholder="Type here your name" 
+                 {...register("name",{required:"Must fill name field"})}/>
+                {errors.name && (<span className='text-red-600'>{errors.name.message}</span>)}
+
+            </fieldset>
+
+
+            
+                         <fieldset className="fieldset">
+                <legend className="fieldset-legend">Write your Photo URL</legend>
+                <input type="tel" className="input"  placeholder="Type here your email" 
+                 {...register("photo",{required:"Must fill email field"})}/>
+                {errors.photo && (<span className='text-red-600'>{errors.photo.message}</span>)}
+
+            </fieldset>
 
                          <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your email</legend>
@@ -46,11 +66,11 @@ const RegisterPage = () => {
             </fieldset>
 
                     <div className='flex justify-center'>
-                        <button className='btn btn-primary' type='sumint'>Login</button>
+                        <button className='btn btn-primary' type='sumint'>Register</button>
                     </div>
                     </form>
 
-                    <p>Don't have an accunt ? <Link className='text-blue-500' href={'/register'}>register</Link></p>
+                    
 
                 </div>
             </div>
