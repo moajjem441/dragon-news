@@ -14,7 +14,7 @@ const LogInPage = () => {
 // }
 
 
-    const {register,handleSubmit,errors}=useForm();
+    const {register,handleSubmit,formState: { errors },}=useForm();
     const onSubmit=(data)=>console.log(data)
 
 
@@ -31,16 +31,17 @@ const LogInPage = () => {
                          <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your email</legend>
                 <input type="email" className="input"  placeholder="Type here your email" 
-                 {...register("email",{required:true})}/>
-                
-                <p className="label">Optional</p>
+                 {...register("email",{required:"Must fill email field"})}/>
+                {errors.email && (<span className='text-red-600'>{errors.email.message}</span>)}
+
             </fieldset>
 
             <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your passsword</legend>
                 <input type="password" className="input"  placeholder="Type here your password"
-                {...register("password",{required:true})}
+                {...register("password",{required:"Password field must fill it"})}
                  />
+                 {errors.password && (<span className='text-red-600'>{errors.email.message}</span>)}
                  
                 <p className="label">Optional</p>
                
