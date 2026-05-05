@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form" //react-hook-form install korte hobe
 
 const LogInPage = () => {
     
@@ -42,8 +42,6 @@ const LogInPage = () => {
                 {...register("password",{required:"Password field must fill it"})}
                  />
                  {errors.password && (<span className='text-red-600'>{errors.email.message}</span>)}
-                 
-                <p className="label">Optional</p>
                
             </fieldset>
 
@@ -52,6 +50,7 @@ const LogInPage = () => {
                     </div>
                     </form>
 
+                    <p>Don't have an accunt ? <Link className='text-blue-500' href={'/register'}>register</Link></p>
 
                 </div>
             </div>
