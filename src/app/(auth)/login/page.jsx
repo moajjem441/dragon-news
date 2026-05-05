@@ -30,15 +30,18 @@ const LogInPage = () => {
 
                          <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your email</legend>
-                <input type="email" className="input"  placeholder="Type here your email" />
-                 {...register("email")}
+                <input type="email" className="input"  placeholder="Type here your email" 
+                 {...register("email",{required:true})}/>
+                
                 <p className="label">Optional</p>
             </fieldset>
 
             <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your passsword</legend>
-                <input type="password" className="input"  placeholder="Type here your password" />
-                 {...register("password")}
+                <input type="password" className="input"  placeholder="Type here your password"
+                {...register("password",{required:true})}
+                 />
+                 
                 <p className="label">Optional</p>
                
             </fieldset>
