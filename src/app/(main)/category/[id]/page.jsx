@@ -1,7 +1,14 @@
 import CardNews from "@/components/Homepage/CardNews";
 import LeftSideBar from "@/components/Homepage/LeftSideBar";
 import RightSideBar from "@/components/Homepage/RightSideBar";
-import { getData, getNewsByCategoryId } from "@/lib/data";
+import { getData, getNewsByCategoryId, getNewsDetailsById } from "@/lib/data";
+
+
+
+
+
+
+
 
 const NewsDetails = async ({ params }) => {
   const { id } = await params;
@@ -9,6 +16,7 @@ const NewsDetails = async ({ params }) => {
   const allCategories = await getData();
   const news = await getNewsByCategoryId(id);
   
+
 
   return (
     <div className="grid grid-cols-12 gap-2 mx-auto container  py-4">

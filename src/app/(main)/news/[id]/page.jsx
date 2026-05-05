@@ -6,6 +6,24 @@ import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaRegEye, FaStar } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
+
+
+
+ export const generateMetadata= async({ params })=> {
+  // Params await kora thik ache (Next.js 15+ er jonno)
+  const { id } = await params;
+
+  // Data fetch kora
+  const news = await getNewsDetailsById(id);
+  console.log("news",news)
+
+  return {
+    title:news.title,
+    description:news.details , // Apnar API-te 'details' thakle ota use koren
+  };
+}
+
+
 const NewsDetailsPage = async ({params}) => {
 
     const {id}= await params;
