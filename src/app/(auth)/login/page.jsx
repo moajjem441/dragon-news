@@ -1,35 +1,57 @@
+"use client";
+
 import Link from 'next/link';
 import React from 'react';
+import { useForm } from "react-hook-form"
 
 const LogInPage = () => {
+    
+// const formHandler=(e)=>{
+//     e.preventDefault();
+//     const email=e.target.email.value;
+//     const password=e.target.password.value;
+//     console.log(email,password)
+// }
+
+
+    const {register,handleSubmit,errors}=useForm();
+    const onSubmit=(data)=>console.log(data)
+
+
+
     return (
         <div className='container flex justify-center items-center h-[85vh]'>
-            <h1>Log in</h1>
 
-            <fieldset className="fieldset">
+            <div className="card w-96 bg-base-100 card-md shadow-sm">
+                <div className="card-body">
+                      <h1>Log in</h1>
+
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                         <fieldset className="fieldset">
                 <legend className="fieldset-legend">Write your email</legend>
-                <input type="email" className="input" name='email' placeholder="Type here" />
+                <input type="email" className="input"  placeholder="Type here your email" />
+                 {...register("email")}
                 <p className="label">Optional</p>
             </fieldset>
-            
+
             <fieldset className="fieldset">
-                <legend className="fieldset-legend">Write your email</legend>
-                <input type="email" className="input" name='email' placeholder="Type here" />
+                <legend className="fieldset-legend">Write your passsword</legend>
+                <input type="password" className="input"  placeholder="Type here your password" />
+                 {...register("password")}
                 <p className="label">Optional</p>
+               
             </fieldset>
 
+                    <div className='flex justify-center'>
+                        <button className='btn btn-primary' type='sumint'>Login</button>
+                    </div>
+                    </form>
 
 
-<div className="card w-96 bg-base-100 card-md shadow-sm">
-  <div className="card-body">
-    <h2 className="card-title">Medium Card</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="justify-end card-actions">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
-            
+                </div>
+            </div>
+
 
         </div>
     );
