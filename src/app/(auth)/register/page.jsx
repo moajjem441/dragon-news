@@ -31,7 +31,16 @@ const RegisterPage =  () => {
     callbackURL: "/",
 });
 
-console.log(name,email,photo,password)
+console.log(name,email,photo,password,error);
+
+if(error)
+{
+    alert(error.message)
+}
+if(!error)
+{
+    alert("Register Successfull")
+}
     
     }
    
