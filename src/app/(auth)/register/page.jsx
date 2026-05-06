@@ -1,10 +1,11 @@
 "use client";
 
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from "react-hook-form" //react-hook-form install korte hobe
 
-const RegisterPage = () => {
+const RegisterPage =  () => {
     
 // const formHandler=(e)=>{
 //     e.preventDefault();
@@ -15,7 +16,27 @@ const RegisterPage = () => {
 
 
     const {register,handleSubmit,formState: { errors },}=useForm();
-    const onSubmit=(data)=>console.log(data)
+    const onSubmit= async (data)=>{
+        console.log(data)
+
+         const{name,email,photo_url,password}=data;
+
+
+
+         const { data:res, error } = await authClient.signUp.email({
+    name: name, // required
+    email: email, // required
+    password: password, // required
+    image: photo_url,
+    callbackURL: "/",
+});
+
+console.log(name,email,photo_url,password)
+    
+    }
+   
+
+  
 
 
 
