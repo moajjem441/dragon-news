@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
 
     return (
-        <div className='container flex justify-center items-center h-[85vh]'>
+        <div className='container mx-auto flex justify-center items-center h-[85vh]'>
 
             <div className="card w-96 bg-base-100 card-md shadow-sm">
                 <div className="card-body">
@@ -31,7 +31,7 @@ const RegisterPage = () => {
 
                         
                          <fieldset className="fieldset">
-                <legend className="fieldset-legend">Write your name</legend>
+                <legend className="fieldset-legend"> Your name</legend>
                 <input type="text" className="input"  placeholder="Type here your name" 
                  {...register("name",{required:"Must fill name field"})}/>
                 {errors.name && (<span className='text-red-600'>{errors.name.message}</span>)}
@@ -41,15 +41,15 @@ const RegisterPage = () => {
 
             
                          <fieldset className="fieldset">
-                <legend className="fieldset-legend">Write your Photo URL</legend>
-                <input type="tel" className="input"  placeholder="Type here your email" 
+                <legend className="fieldset-legend"> Photo URL</legend>
+                <input type="tel" className="input"  placeholder="Type here your Photo URL" 
                  {...register("photo",{required:"Must fill email field"})}/>
                 {errors.photo && (<span className='text-red-600'>{errors.photo.message}</span>)}
 
             </fieldset>
 
                          <fieldset className="fieldset">
-                <legend className="fieldset-legend">Write your email</legend>
+                <legend className="fieldset-legend"> Email</legend>
                 <input type="email" className="input"  placeholder="Type here your email" 
                  {...register("email",{required:"Must fill email field"})}/>
                 {errors.email && (<span className='text-red-600'>{errors.email.message}</span>)}
@@ -57,11 +57,11 @@ const RegisterPage = () => {
             </fieldset>
 
             <fieldset className="fieldset">
-                <legend className="fieldset-legend">Write your passsword</legend>
+                <legend className="fieldset-legend"> Passsword</legend>
                 <input type="password" className="input"  placeholder="Type here your password"
                 {...register("password",{required:"Password field must fill it"})}
                  />
-                 {errors.password && (<span className='text-red-600'>{errors.email.message}</span>)}
+                 {errors.password && (<span className='text-red-600'>{errors.password.message}</span>)}
                
             </fieldset>
 

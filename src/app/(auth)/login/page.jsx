@@ -20,7 +20,7 @@ const LogInPage = () => {
 
 
     return (
-        <div className='container flex justify-center items-center h-[85vh]'>
+        <div className='container mx-auto flex justify-center items-center h-[85vh]'>
 
             <div className="card w-96 bg-base-100 card-md shadow-sm">
                 <div className="card-body">
