@@ -19,19 +19,19 @@ const RegisterPage =  () => {
     const onSubmit= async (data)=>{
         console.log(data)
 
-         const{name,email,photo_url,password}=data;
+         const{name,email,photo,password}=data;
 
 
 
-         const { data:res, error } = await authClient.signUp.email({
+    const { data:res, error } = await authClient.signUp.email({
     name: name, // required
     email: email, // required
     password: password, // required
-    image: photo_url,
+    image: photo,
     callbackURL: "/",
 });
 
-console.log(name,email,photo_url,password)
+console.log(name,email,photo,password)
     
     }
    
@@ -87,7 +87,7 @@ console.log(name,email,photo_url,password)
             </fieldset>
 
                     <div className='flex justify-center'>
-                        <button className='btn btn-primary' type='sumint'>Register</button>
+                        <button className='btn btn-primary' type='submit'>Register</button>
                     </div>
                     </form>
 
