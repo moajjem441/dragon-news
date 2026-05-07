@@ -22,12 +22,14 @@ const LogInPage = () => {
         const { email, password } = data;
 
 
-        const { data, error } = await authClient.signIn.email({
+        const { data:res, error } = await authClient.signIn.email({
             email: email, // required
             password: password, // required
             rememberMe: true,
             callbackURL: "/",
         });
+
+        console.log(res,error)
     }
 
 
