@@ -36,7 +36,7 @@ const LogInPage = () => {
 
 
     return (
-        
+
         <div className='container mx-auto flex justify-center items-center h-[85vh]'>
 
             <div className="card w-96 bg-base-100 card-md shadow-sm">
@@ -49,6 +49,7 @@ const LogInPage = () => {
                             <legend className="fieldset-legend">Write your email</legend>
                             <input type="email" className="input" placeholder="Type here your email"
                                 {...register("email", { required: "Must fill email field" })} />
+                                
                             {errors.email && (<span className='text-red-600'>{errors.email.message}</span>)}
 
                         </fieldset>
