@@ -27,6 +27,7 @@ const LogInPage = () => {
             password: password, // required
             rememberMe: true,
             callbackURL: "/",
+
         });
 
         console.log(res,error)
@@ -35,6 +36,7 @@ const LogInPage = () => {
 
 
     return (
+        
         <div className='container mx-auto flex justify-center items-center h-[85vh]'>
 
             <div className="card w-96 bg-base-100 card-md shadow-sm">
